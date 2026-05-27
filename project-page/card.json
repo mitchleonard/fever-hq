@@ -1,0 +1,15 @@
+{
+  "type": "Project",
+  "org": "Hackathon",
+  "number": 1,
+  "title": "Fever Bot",
+  "tagline": "Auto-syncing Fever calendar feed and pregame iMessages for one very devoted superfan.",
+  "tags": ["WNBA", "iMessage", "GoogleCalendar"],
+  "slug": "fever-bot",
+  "date_iso": "2026-05-26",
+  "elapsed_min": null,
+  "commits": null,
+  "tools_used": null,
+  "live_url": "",
+  "repo_url": ""
+}

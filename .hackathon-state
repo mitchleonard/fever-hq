@@ -1,0 +1,12 @@
+{
+  "number": 1,
+  "slug": "fever-bot",
+  "start_iso": "2026-05-27T03:58:54Z",
+  "start_epoch": 1779854334,
+  "time_budget_min": 60,
+  "project_name": "Fever Bot",
+  "tags": ["WNBA", "iMessage", "GoogleCalendar"],
+  "voice": "sports-radio",
+  "scope": "MVP: ICS feed + pregame texts",
+  "wife_constraint": "no Claude tooling on her side; must be free"
+}
