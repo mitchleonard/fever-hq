@@ -7,7 +7,7 @@ import { Wordmark } from "./Wordmark";
  */
 export function AppHeader() {
   return (
-    <header className="sticky top-0 z-30 bg-fever-navy-deep/80 backdrop-blur-md border-b border-white/5">
+    <header className="sticky top-0 z-30 bg-fever-navy-deep/80 backdrop-blur-md border-b border-white/5 pt-[env(safe-area-inset-top)]">
       <div className="mx-auto max-w-2xl px-5 py-3 flex items-center justify-between">
         <Link href="/" className="block" aria-label="Fever HQ home">
           <Wordmark size="sm" />
