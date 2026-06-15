@@ -109,7 +109,22 @@ You'll see one of:
 - `{"status": "queued", "minutes_out": 47}` — game coming, cron will fire on next tick
 - `{"status": "sent", ...}` — push fired
 
-The cron then runs automatically every 15 minutes (`0,15,30,45 * * * *`) and handles the pregame send.
+Vercel Hobby accounts only allow daily Vercel Cron runs, so the app does not
+ship with a Vercel-managed 15-minute cron. For automatic pregame checks on
+Hobby, point an external scheduler (cron-job.org, GitHub Actions, etc.) at this
+same URL every 15 minutes with the Authorization header. If you upgrade the
+Vercel project to Pro, add this cron back to `vercel.json`:
+
+```json
+{
+  "crons": [
+    {
+      "path": "/api/cron/pregame",
+      "schedule": "0,15,30,45 * * * *"
+    }
+  ]
+}
+```
 
 ## Step 8 — Calendar piece (~30 sec)
 
