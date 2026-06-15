@@ -1,0 +1,36 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# next.js
+.next/
+out/
+build
+
+# production
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env
+.env*.local
+.env
+
+# logs
+logs
+*.log
+
+# vapid keys (generated, never committed)
+.vapid-keys.json

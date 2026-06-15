@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/*
+  Fever HQ — Indiana Fever inspired palette.
+  Colors are the public WNBA brand palette (not trademarkable).
+  All other identity (wordmark, layouts, UI patterns) is original.
+*/
+@theme {
+  /* Fever brand */
+  --color-fever-navy: #002D62;
+  --color-fever-navy-soft: #0B3E78;
+  --color-fever-navy-deep: #001a3d;
+  --color-fever-gold: #FFCD00;
+  --color-fever-gold-soft: #FFE066;
+  --color-fever-gold-deep: #D9AE00;
+
+  /* Functional neutrals */
+  --color-ink: #0a0e1a;
+  --color-ink-soft: #1a1f2e;
+  --color-paper: #FAFAF7;
+  --color-paper-soft: #F1F1EC;
+
+  /* WNBA broadcast accent (sparingly) */
+  --color-court: #C8102E;
+
+  /* Typography */
+  --font-display: var(--font-bebas), "Bebas Neue", Impact, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+
+  /* Radii (locked: pill buttons, 16px cards, 8px inputs) */
+  --radius-btn: 9999px;
+  --radius-card: 16px;
+  --radius-input: 8px;
+
+  /* Motion easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-fever-navy-deep);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+    overscroll-behavior-y: none;
+  }
+
+  /* Prevent iOS Safari bounce + viewport jumping in PWA mode */
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-fever-gold);
+    color: var(--color-fever-navy-deep);
+  }
+
+  /* Numbers in mono for the broadcast feel */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Court-line accent (used sparingly as a brand mark) */
+  .court-rule {
+    background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-fever-gold) 50%,
+      transparent 100%
+    );
+    height: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
