@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  outputFileTracingRoot: process.cwd(),
   // PWA serving headers — ensure the service worker has the right scope.
   async headers() {
     return [
