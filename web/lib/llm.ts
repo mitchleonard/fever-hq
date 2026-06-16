@@ -20,6 +20,17 @@ export type ChatMessage = {
   content: string;
 };
 
+// Reused across requests instead of constructing a new client per call.
+let cachedClient: Anthropic | undefined;
+function getClient(): Anthropic {
+  if (!cachedClient) {
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) throw new Error("ANTHROPIC_API_KEY not set");
+    cachedClient = new Anthropic({ apiKey });
+  }
+  return cachedClient;
+}
+
 // ──────────────────────────────────────────────────────────────────────
 // Time helpers — always Central, never UTC.
 // ──────────────────────────────────────────────────────────────────────
@@ -86,12 +97,17 @@ function scheduleContext(): string {
 
 // ──────────────────────────────────────────────────────────────────────
 // System prompt — voice + constraints + live-data permissions.
+//
+// Split into a static block (cached) and a tiny dynamic block (the
+// current timestamp, uncached). Anthropic's prompt cache only hits when
+// the cached block's text is byte-identical to a previous call, so the
+// minute-by-minute clock can't live inside it. Isolating it means the
+// ~700-900 token instructions + schedule JSON get reused from cache on
+// every request within the same day, cutting time-to-first-token instead
+// of reprocessing the whole system prompt fresh every reply.
 // ──────────────────────────────────────────────────────────────────────
-function systemPrompt(): string {
+function staticSystemPrompt(): string {
   return `You are Fever HQ, a personal WNBA superfan service. You text with one specific person: a Caitlin Clark and Indiana Fever superfan. She is non-technical. She wants the right info, fast, with personality.
-
-DATE AND TIME
-Right now it is ${nowInCTHuman()}. Trust this over anything in your training data. If she asks "is the game tonight" or "what day is it", anchor to this exact date. Never assume the date is tomorrow because of a timezone calculation.
 
 VOICE
 - Sports radio energy. Punchy. Confident. Short sentences.
@@ -119,6 +135,25 @@ ${scheduleContext()}
 Reply with just the chat body. No quote marks, no preamble.`;
 }
 
+function dynamicSystemPrompt(): string {
+  return `DATE AND TIME
+Right now it is ${nowInCTHuman()}. Trust this over anything in your training data. If she asks "is the game tonight" or "what day is it", anchor to this exact date. Never assume the date is tomorrow because of a timezone calculation.`;
+}
+
+function systemBlocks(): Anthropic.TextBlockParam[] {
+  return [
+    {
+      type: "text",
+      text: staticSystemPrompt(),
+      cache_control: { type: "ephemeral" },
+    },
+    {
+      type: "text",
+      text: dynamicSystemPrompt(),
+    },
+  ];
+}
+
 // Anthropic's server-side web search tool. The model decides when to call it;
 // Anthropic handles the search itself and returns results into the conversation
 // before the model emits its final text. No new env var, no extra plumbing.
@@ -135,14 +170,11 @@ const WEB_SEARCH_TOOL = {
 export async function* streamReply(
   history: ChatMessage[],
 ): AsyncIterable<string> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) throw new Error("ANTHROPIC_API_KEY not set");
-
-  const client = new Anthropic({ apiKey });
+  const client = getClient();
   const stream = client.messages.stream({
     model: MODEL,
     max_tokens: 800,
-    system: systemPrompt(),
+    system: systemBlocks(),
     messages: history,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     tools: [WEB_SEARCH_TOOL as any],
@@ -160,13 +192,11 @@ export async function* streamReply(
 
 // Non-streaming variant for one-shot tools (e.g., notification drafting).
 export async function generateOneShot(prompt: string): Promise<string> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) throw new Error("ANTHROPIC_API_KEY not set");
-  const client = new Anthropic({ apiKey });
+  const client = getClient();
   const res = await client.messages.create({
     model: MODEL,
     max_tokens: 800,
-    system: systemPrompt(),
+    system: systemBlocks(),
     messages: [{ role: "user", content: prompt }],
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     tools: [WEB_SEARCH_TOOL as any],
