@@ -135,3 +135,8 @@ Entries are timestamped from kickoff in `[+MM:SS]` format. Pivots are prefixed w
   did: created deploy/public/{fever-2026.ics,index.html} + deploy/vercel.json with text/calendar content-type, CORS allow-*, and 1h CDN cache; landing page is a one-screen subscribe instruction
   next: deploy_to_vercel under team mitchleonards-projects-c174884e
 
+
+[+90:00] PUBLISHED to mitchleonard.com — Phase D complete
+  why: case study staged and previewed (Phase D1 + D2); user approved with "ship it"
+  did: spliced fever-hq entry into data/caseStudies.js before strava-dashboard; added 'fever-hq' to PERSONAL_SLUGS; added AI Chatbot + API to PROJECT_TAGS; patched ResultsBlock regex to accept $ prefix; copied 6-visual narrative + 1200x630 OG preview into public/fever-hq/
+  next: linkedin/x announcement post; chatbot upgrade (Central-Time date fix + Anthropic web_search wiring for live scores and lineups)

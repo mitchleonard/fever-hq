@@ -1,7 +1,8 @@
 import { streamReply, type ChatMessage } from "@/lib/llm";
 
 export const runtime = "nodejs";
-export const maxDuration = 30;
+// Web search adds 3-8s of latency per search call. 60s ceiling is comfortable.
+export const maxDuration = 60;
 
 export async function POST(req: Request) {
   let body: { messages?: ChatMessage[] };

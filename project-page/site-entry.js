@@ -7,7 +7,7 @@
   slug: 'fever-hq',
   title: 'Fever HQ',
   subtitle: 'A personalized Indiana Fever superfan PWA. iOS push notifications, conversational chat, auto-syncing calendar.',
-  description: 'A custom-branded WNBA companion app for one very devoted fan, after the original iMessage bot idea hit personal-vs-enterprise gates.',
+  description: 'A personalized Indiana Fever superfan PWA. iOS push notifications, conversational chat, auto-syncing calendar.',
   company: null,
   client: null,
   tags: ['Hackathon', 'AI Chatbot', 'API'],
@@ -16,7 +16,7 @@
   results: [
     { value: '~90 min', label: 'Start to ship' },
     { value: '5', label: 'Channel pivots' },
-    { value: '$3/yr', label: 'Infrastructure' },
+    { value: '<$3/yr', label: 'Infrastructure' },
   ],
   context: `My wife is a Caitlin Clark and Indiana Fever superfan. Keeping up with every game means jumping between ESPN, Yahoo Sports, the team site, and her own calendar — and none of those apps are built for one team or one fan. She isn't techy. She just wants the right info to land in front of her at the right time, on the device she already uses.`,
   challenge: `The first idea was an iMessage bot — texts from "Fever HQ" 15 minutes before every tipoff, branded as a contact she'd save like any other person. Two walls killed it. iMessage limits each Apple ID to a single "Start new conversations from" identity, so bot sends would have read as coming from me, not from Fever HQ. The SMS-provider route around it kept asking for ~$35 in A2P 10DLC registration plus a paid Twilio account before I'd sent a single message — a personal-project budget couldn't justify that for one user.`,
@@ -33,7 +33,7 @@
   impact: null,
   visuals: [
     { type: 'image', src: '/fever-hq/preview.png', caption: 'Home and schedule surfaces on iPhone, as they ship to feverhq.mitchleonard.com', featured: true },
-    { type: 'image', src: '/fever-hq/icon-512.png', description: 'Custom Fever-inspired app icon — Navy + Gold + Red palette, original wordmark, no team IP.', annotated: true },
+    { type: 'image', src: '/fever-hq/icon-512.png', caption: 'The app icon, generated in OpenAI\'s gpt-image-2 model.', description: 'The icon ships with the PWA when she installs it to her home screen. Generated in OpenAI\'s gpt-image-2 image model on a Fever-coded palette, then resized into the standard PWA icon set (192, 512, 180 for Apple touch, 16 and 32 for favicons).', annotated: true },
   ],
   next: 'strava-dashboard',
 },

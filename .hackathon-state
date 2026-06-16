@@ -10,6 +10,8 @@
   "scope": "Shipped: PWA at feverhq.mitchleonard.com with iOS push, Anthropic chat, ICS calendar feed",
   "live_url": "https://feverhq.mitchleonard.com",
   "repo_url": "https://github.com/mitchleonard/fever-hq",
+  "published_to_portfolio_iso": "2026-06-16T03:30:00Z",
+  "published_url": "https://mitchleonard.com/projects/fever-hq",
   "wife_constraint": "no Claude tooling; one-time Add to Home Screen onboarding",
   "annual_cost_estimate_usd": 3,
   "original_idea": "iMessage bot — texts from a 'Fever HQ' identity 15 minutes before every tipoff, saved as a contact on her phone.",
