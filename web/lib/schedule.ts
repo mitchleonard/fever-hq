@@ -101,6 +101,39 @@ export function shortChannel(channel: string): string {
   return channel.split("/")[0].trim();
 }
 
+/**
+ * Networks carried on YouTube TV's base plan as of June 2026.
+ * Source: tv.youtube.com/learn channel list.
+ */
+const YOUTUBE_TV_NETWORKS = new Set([
+  "NBA TV",
+  "ESPN",
+  "ESPN2",
+  "ABC",
+  "CBS",
+  "NBC",
+  "ION",
+  "USA Network",
+  "FX",
+  "MeTV",
+]);
+
+/** Returns true if any network in the channel string is on YouTube TV. */
+export function isOnYouTubeTV(channel: string): boolean {
+  const networks = channel.split("/").map((s) => s.trim());
+  return networks.some((n) => YOUTUBE_TV_NETWORKS.has(n));
+}
+
+/**
+ * Display channel name with YouTube TV indicator appended when carried.
+ * Example: "NBA TV / WTHR" -> "NBA TV · YouTube TV"
+ *          "Prime Video"  -> "Prime Video"
+ */
+export function channelWithYouTubeTV(channel: string): string {
+  const primary = shortChannel(channel);
+  return isOnYouTubeTV(channel) ? `${primary} · YouTube TV` : primary;
+}
+
 export function shortVenue(venue: string): string {
   return venue.split(",")[0].trim();
 }

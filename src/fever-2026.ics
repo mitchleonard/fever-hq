@@ -1,0 +1,646 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fever Bot//Indiana Fever 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Indiana Fever 2026
+X-WR-CALDESC:Every Indiana Fever game with channel and tipoff. Auto-updat
+ es daily via Fever Bot.
+X-WR-TIMEZONE:America/New_York
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:America/New_York
+X-LIC-LOCATION:America/New_York
+BEGIN:STANDARD
+DTSTART:19701101T020000
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19700308T020000
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fever-2026-05-09-dallaswings@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260509T130000
+DTEND;TZID=America/New_York:20260509T153000
+SUMMARY:Fever vs Dallas Wings
+DESCRIPTION:Indiana Fever vs Dallas Wings\nTipoff: 13:00 ET\nWatch on: AB
+ C\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto-updates 
+ daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-05-13-losangelessparks@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260513T220000
+DTEND;TZID=America/New_York:20260514T003000
+SUMMARY:Fever @ Los Angeles Sparks
+DESCRIPTION:Indiana Fever @ Los Angeles Sparks\nTipoff: 22:00 ET\nWatch o
+ n: USA Network\nVenue: Crypto.com Arena\, Los Angeles\n\nSchedule auto-u
+ pdates daily via Fever Bot.
+LOCATION:Crypto.com Arena\, Los Angeles
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-05-15-washingtonmystics@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260515T193000
+DTEND;TZID=America/New_York:20260515T220000
+SUMMARY:Fever vs Washington Mystics
+DESCRIPTION:Indiana Fever vs Washington Mystics\nTipoff: 19:30 ET\nWatch 
+ on: ION\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto-up
+ dates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-05-17-seattlestorm@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260517T180000
+DTEND;TZID=America/New_York:20260517T203000
+SUMMARY:Fever vs Seattle Storm
+DESCRIPTION:Indiana Fever vs Seattle Storm\nTipoff: 18:00 ET\nWatch on: C
+ BS / Paramount+\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule
+  auto-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-05-20-portlandfire@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260520T190000
+DTEND;TZID=America/New_York:20260520T213000
+SUMMARY:Fever vs Portland Fire
+DESCRIPTION:Indiana Fever vs Portland Fire\nTipoff: 19:00 ET\nWatch on: U
+ SA Network\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto
+ -updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-05-22-goldenstatevalkyries@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260522T193000
+DTEND;TZID=America/New_York:20260522T220000
+SUMMARY:Fever vs Golden State Valkyries
+DESCRIPTION:Indiana Fever vs Golden State Valkyries\nTipoff: 19:30 ET\nWa
+ tch on: ION\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule aut
+ o-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-05-28-goldenstatevalkyries@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260528T220000
+DTEND;TZID=America/New_York:20260529T003000
+SUMMARY:Fever @ Golden State Valkyries
+DESCRIPTION:Indiana Fever @ Golden State Valkyries\nTipoff: 22:00 ET\nWat
+ ch on: Prime Video\nVenue: Chase Center\, San Francisco\n\nSchedule auto
+ -updates daily via Fever Bot.
+LOCATION:Chase Center\, San Francisco
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-05-30-portlandfire@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260530T200000
+DTEND;TZID=America/New_York:20260530T223000
+SUMMARY:Fever @ Portland Fire
+DESCRIPTION:Indiana Fever @ Portland Fire\nTipoff: 20:00 ET\nWatch on: NB
+ A TV / WTHR\nVenue: Moda Center\, Portland\n\nSchedule auto-updates dail
+ y via Fever Bot.
+LOCATION:Moda Center\, Portland
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-04-atlantadream@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260604T190000
+DTEND;TZID=America/New_York:20260604T213000
+SUMMARY:Fever vs Atlanta Dream
+DESCRIPTION:Indiana Fever vs Atlanta Dream\nTipoff: 19:00 ET\nWatch on: P
+ rime Video\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto
+ -updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-06-newyorkliberty@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260606T200000
+DTEND;TZID=America/New_York:20260606T223000
+SUMMARY:Fever @ New York Liberty
+DESCRIPTION:Indiana Fever @ New York Liberty\nTipoff: 20:00 ET\nWatch on:
+  CBS / Paramount+\nVenue: Barclays Center\, Brooklyn\n\nSchedule auto-up
+ dates daily via Fever Bot.
+LOCATION:Barclays Center\, Brooklyn
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-08-washingtonmystics@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260608T200000
+DTEND;TZID=America/New_York:20260608T223000
+SUMMARY:Fever @ Washington Mystics
+DESCRIPTION:Indiana Fever @ Washington Mystics\nTipoff: 20:00 ET\nWatch o
+ n: ESPN2\nVenue: Capital One Arena\, Washington DC\n\nSchedule auto-upda
+ tes daily via Fever Bot.
+LOCATION:Capital One Arena\, Washington DC
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-11-chicagosky@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260611T190000
+DTEND;TZID=America/New_York:20260611T213000
+SUMMARY:Fever vs Chicago Sky
+DESCRIPTION:Indiana Fever vs Chicago Sky\nTipoff: 19:00 ET\nWatch on: ESP
+ N / Prime Video\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule
+  auto-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-13-connecticutsun@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260613T180000
+DTEND;TZID=America/New_York:20260613T203000
+SUMMARY:Fever @ Connecticut Sun
+DESCRIPTION:Indiana Fever @ Connecticut Sun\nTipoff: 18:00 ET\nWatch on: 
+ NBA TV / WTHR\nVenue: Mohegan Sun Arena\, Uncasville\n\nSchedule auto-up
+ dates daily via Fever Bot.
+LOCATION:Mohegan Sun Arena\, Uncasville
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-16-torontotempo@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260616T190000
+DTEND;TZID=America/New_York:20260616T213000
+SUMMARY:Fever vs Toronto Tempo
+DESCRIPTION:Indiana Fever vs Toronto Tempo\nTipoff: 19:00 ET\nWatch on: N
+ BA TV / MeTV\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule au
+ to-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-18-atlantadream@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260618T193000
+DTEND;TZID=America/New_York:20260618T220000
+SUMMARY:Fever vs Atlanta Dream
+DESCRIPTION:Indiana Fever vs Atlanta Dream\nTipoff: 19:30 ET\nWatch on: P
+ rime Video\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto
+ -updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-20-atlantadream@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260620T130000
+DTEND;TZID=America/New_York:20260620T153000
+SUMMARY:Fever @ Atlanta Dream
+DESCRIPTION:Indiana Fever @ Atlanta Dream\nTipoff: 13:00 ET\nWatch on: AB
+ C\nVenue: Gateway Center Arena\, College Park GA\n\nSchedule auto-update
+ s daily via Fever Bot.
+LOCATION:Gateway Center Arena\, College Park GA
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-22-phoenixmercury@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260622T200000
+DTEND;TZID=America/New_York:20260622T223000
+SUMMARY:Fever vs Phoenix Mercury
+DESCRIPTION:Indiana Fever vs Phoenix Mercury\nTipoff: 20:00 ET\nWatch on:
+  ESPN\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto-upda
+ tes daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-24-phoenixmercury@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260624T190000
+DTEND;TZID=America/New_York:20260624T213000
+SUMMARY:Fever vs Phoenix Mercury
+DESCRIPTION:Indiana Fever vs Phoenix Mercury\nTipoff: 19:00 ET\nWatch on:
+  USA Network\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule au
+ to-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-06-27-losangelessparks@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260627T200000
+DTEND;TZID=America/New_York:20260627T223000
+SUMMARY:Fever vs Los Angeles Sparks
+DESCRIPTION:Indiana Fever vs Los Angeles Sparks\nTipoff: 20:00 ET\nWatch 
+ on: NBA TV / WTHR\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedu
+ le auto-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-07-05-lasvegasaces@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260705T190000
+DTEND;TZID=America/New_York:20260705T213000
+SUMMARY:Fever @ Las Vegas Aces
+DESCRIPTION:Indiana Fever @ Las Vegas Aces\nTipoff: 19:00 ET\nWatch on: E
+ SPN / ABC\nVenue: T-Mobile Arena\, Las Vegas\n\nSchedule auto-updates da
+ ily via Fever Bot.
+LOCATION:T-Mobile Arena\, Las Vegas
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-07-08-losangelessparks@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260708T220000
+DTEND;TZID=America/New_York:20260709T003000
+SUMMARY:Fever @ Los Angeles Sparks
+DESCRIPTION:Indiana Fever @ Los Angeles Sparks\nTipoff: 22:00 ET\nWatch o
+ n: USA Network\nVenue: Crypto.com Arena\, Los Angeles\n\nSchedule auto-u
+ pdates daily via Fever Bot.
+LOCATION:Crypto.com Arena\, Los Angeles
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-07-09-phoenixmercury@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260709T220000
+DTEND;TZID=America/New_York:20260710T003000
+SUMMARY:Fever @ Phoenix Mercury
+DESCRIPTION:Indiana Fever @ Phoenix Mercury\nTipoff: 22:00 ET\nWatch on: 
+ Prime Video\nVenue: Footprint Center\, Phoenix\n\nSchedule auto-updates 
+ daily via Fever Bot.
+LOCATION:Footprint Center\, Phoenix
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-07-12-lasvegasaces@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260712T210000
+DTEND;TZID=America/New_York:20260712T233000
+SUMMARY:Fever @ Las Vegas Aces
+DESCRIPTION:Indiana Fever @ Las Vegas Aces\nTipoff: 21:00 ET\nWatch on: N
+ BC / Peacock\nVenue: T-Mobile Arena\, Las Vegas\n\nSchedule auto-updates
+  daily via Fever Bot.
+LOCATION:T-Mobile Arena\, Las Vegas
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-07-15-goldenstatevalkyries@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260715T200000
+DTEND;TZID=America/New_York:20260715T223000
+SUMMARY:Fever vs Golden State Valkyries
+DESCRIPTION:Indiana Fever vs Golden State Valkyries\nTipoff: 20:00 ET\nWa
+ tch on: USA Network\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSche
+ dule auto-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-07-17-seattlestorm@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260717T193000
+DTEND;TZID=America/New_York:20260717T220000
+SUMMARY:Fever vs Seattle Storm
+DESCRIPTION:Indiana Fever vs Seattle Storm\nTipoff: 19:30 ET\nWatch on: I
+ ON\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto-updates
+  daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-07-18-newyorkliberty@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260718T200000
+DTEND;TZID=America/New_York:20260718T223000
+SUMMARY:Fever vs New York Liberty
+DESCRIPTION:Indiana Fever vs New York Liberty\nTipoff: 20:00 ET\nWatch on
+ : CBS / Paramount+\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSched
+ ule auto-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-07-22-connecticutsun@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260722T200000
+DTEND;TZID=America/New_York:20260722T223000
+SUMMARY:Fever vs Connecticut Sun
+DESCRIPTION:Indiana Fever vs Connecticut Sun\nTipoff: 20:00 ET\nWatch on:
+  USA Network\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule au
+ to-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-07-28-seattlestorm@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260728T213000
+DTEND;TZID=America/New_York:20260729T000000
+SUMMARY:Fever @ Seattle Storm
+DESCRIPTION:Indiana Fever @ Seattle Storm\nTipoff: 21:30 ET\nWatch on: NB
+ A TV / WTHR\nVenue: Climate Pledge Arena\, Seattle\n\nSchedule auto-upda
+ tes daily via Fever Bot.
+LOCATION:Climate Pledge Arena\, Seattle
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-07-31-portlandfire@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260731T220000
+DTEND;TZID=America/New_York:20260801T003000
+SUMMARY:Fever @ Portland Fire
+DESCRIPTION:Indiana Fever @ Portland Fire\nTipoff: 22:00 ET\nWatch on: IO
+ N\nVenue: Moda Center\, Portland\n\nSchedule auto-updates daily via Feve
+ r Bot.
+LOCATION:Moda Center\, Portland
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-02-minnesotalynx@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260802T130000
+DTEND;TZID=America/New_York:20260802T153000
+SUMMARY:Fever @ Minnesota Lynx
+DESCRIPTION:Indiana Fever @ Minnesota Lynx\nTipoff: 13:00 ET\nWatch on: A
+ BC\nVenue: Target Center\, Minneapolis\n\nSchedule auto-updates daily vi
+ a Fever Bot.
+LOCATION:Target Center\, Minneapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-06-lasvegasaces@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260806T190000
+DTEND;TZID=America/New_York:20260806T213000
+SUMMARY:Fever vs Las Vegas Aces
+DESCRIPTION:Indiana Fever vs Las Vegas Aces\nTipoff: 19:00 ET\nWatch on: 
+ Prime Video\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule aut
+ o-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-08-chicagosky@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260808T150000
+DTEND;TZID=America/New_York:20260808T173000
+SUMMARY:Fever @ Chicago Sky
+DESCRIPTION:Indiana Fever @ Chicago Sky\nTipoff: 15:00 ET\nWatch on: ABC\
+ nVenue: United Center\, Chicago\n\nSchedule auto-updates daily via Fever
+  Bot.
+LOCATION:United Center\, Chicago
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-11-newyorkliberty@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260811T193000
+DTEND;TZID=America/New_York:20260811T220000
+SUMMARY:Fever vs New York Liberty
+DESCRIPTION:Indiana Fever vs New York Liberty\nTipoff: 19:30 ET\nWatch on
+ : ESPN2\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto-up
+ dates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-14-dallaswings@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260814T193000
+DTEND;TZID=America/New_York:20260814T220000
+SUMMARY:Fever vs Dallas Wings
+DESCRIPTION:Indiana Fever vs Dallas Wings\nTipoff: 19:30 ET\nWatch on: IO
+ N\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto-updates 
+ daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-16-atlantadream@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260816T190000
+DTEND;TZID=America/New_York:20260816T213000
+SUMMARY:Fever @ Atlanta Dream
+DESCRIPTION:Indiana Fever @ Atlanta Dream\nTipoff: 19:00 ET\nWatch on: NB
+ C / Peacock\nVenue: Gateway Center Arena\, College Park GA\n\nSchedule a
+ uto-updates daily via Fever Bot.
+LOCATION:Gateway Center Arena\, College Park GA
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-18-torontotempo@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260818T193000
+DTEND;TZID=America/New_York:20260818T220000
+SUMMARY:Fever @ Toronto Tempo
+DESCRIPTION:Indiana Fever @ Toronto Tempo\nTipoff: 19:30 ET\nWatch on: NB
+ A TV / WTHR\nVenue: Scotiabank Arena\, Toronto\n\nSchedule auto-updates 
+ daily via Fever Bot.
+LOCATION:Scotiabank Arena\, Toronto
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-20-dallaswings@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260820T200000
+DTEND;TZID=America/New_York:20260820T223000
+SUMMARY:Fever @ Dallas Wings
+DESCRIPTION:Indiana Fever @ Dallas Wings\nTipoff: 20:00 ET\nWatch on: Pri
+ me Video\nVenue: American Airlines Center\, Dallas\n\nSchedule auto-upda
+ tes daily via Fever Bot.
+LOCATION:American Airlines Center\, Dallas
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-22-newyorkliberty@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260822T193000
+DTEND;TZID=America/New_York:20260822T220000
+SUMMARY:Fever @ New York Liberty
+DESCRIPTION:Indiana Fever @ New York Liberty\nTipoff: 19:30 ET\nWatch on:
+  CBS / Paramount+\nVenue: Barclays Center\, Brooklyn\n\nSchedule auto-up
+ dates daily via Fever Bot.
+LOCATION:Barclays Center\, Brooklyn
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-23-chicagosky@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260823T180000
+DTEND;TZID=America/New_York:20260823T203000
+SUMMARY:Fever @ Chicago Sky
+DESCRIPTION:Indiana Fever @ Chicago Sky\nTipoff: 18:00 ET\nWatch on: NBC 
+ / Peacock\nVenue: Wintrust Arena\, Chicago\n\nSchedule auto-updates dail
+ y via Fever Bot.
+LOCATION:Wintrust Arena\, Chicago
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-08-28-connecticutsun@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260828T193000
+DTEND;TZID=America/New_York:20260828T220000
+SUMMARY:Fever vs Connecticut Sun
+DESCRIPTION:Indiana Fever vs Connecticut Sun\nTipoff: 19:30 ET\nWatch on:
+  ION\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto-updat
+ es daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-09-18-torontotempo@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260918T193000
+DTEND;TZID=America/New_York:20260918T220000
+SUMMARY:Fever @ Toronto Tempo
+DESCRIPTION:Indiana Fever @ Toronto Tempo\nTipoff: 19:30 ET\nWatch on: IO
+ N\nVenue: Scotiabank Arena\, Toronto\n\nSchedule auto-updates daily via 
+ Fever Bot.
+LOCATION:Scotiabank Arena\, Toronto
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-09-20-washingtonmystics@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260920T160000
+DTEND;TZID=America/New_York:20260920T183000
+SUMMARY:Fever vs Washington Mystics
+DESCRIPTION:Indiana Fever vs Washington Mystics\nTipoff: 16:00 ET\nWatch 
+ on: NBC / Peacock\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedu
+ le auto-updates daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-09-22-minnesotalynx@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260922T200000
+DTEND;TZID=America/New_York:20260922T223000
+SUMMARY:Fever vs Minnesota Lynx
+DESCRIPTION:Indiana Fever vs Minnesota Lynx\nTipoff: 20:00 ET\nWatch on: 
+ ESPN\nVenue: Gainbridge Fieldhouse\, Indianapolis\n\nSchedule auto-updat
+ es daily via Fever Bot.
+LOCATION:Gainbridge Fieldhouse\, Indianapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:fever-2026-09-24-minnesotalynx@feverbot.local
+DTSTAMP:20260527T040926Z
+DTSTART;TZID=America/New_York:20260924T200000
+DTEND;TZID=America/New_York:20260924T223000
+SUMMARY:Fever @ Minnesota Lynx
+DESCRIPTION:Indiana Fever @ Minnesota Lynx\nTipoff: 20:00 ET\nWatch on: P
+ rime Video\nVenue: Target Center\, Minneapolis\n\nSchedule auto-updates 
+ daily via Fever Bot.
+LOCATION:Target Center\, Minneapolis
+CATEGORIES:WNBA,Indiana Fever
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR

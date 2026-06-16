@@ -6,7 +6,7 @@ import {
   type Game,
   dateLabelCt,
   tipoffTimeOnlyCt,
-  shortChannel,
+  channelWithYouTubeTV,
   shortVenue,
   vsOrAt,
   msUntilTipoff,
@@ -77,7 +77,7 @@ export function NextGameCard({ game }: { game: Game }) {
               Channel
             </p>
             <p className="text-sm text-paper leading-tight">
-              {shortChannel(game.channel)}
+              {channelWithYouTubeTV(game.channel)}
             </p>
           </div>
         </div>

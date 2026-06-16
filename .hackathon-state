@@ -1,12 +1,26 @@
 {
-  "number": 1,
-  "slug": "fever-bot",
+  "number": 3,
+  "slug": "fever-hq",
+  "project_name": "Fever HQ",
   "start_iso": "2026-05-27T03:58:54Z",
-  "start_epoch": 1779854334,
-  "time_budget_min": 60,
-  "project_name": "Fever Bot",
-  "tags": ["WNBA", "iMessage", "GoogleCalendar"],
+  "ship_iso": "2026-06-15T03:30:00Z",
+  "active_minutes_estimate": 90,
+  "tags": ["Hackathon", "AI Chatbot", "API"],
   "voice": "sports-radio",
-  "scope": "MVP: ICS feed + pregame texts",
-  "wife_constraint": "no Claude tooling on her side; must be free"
+  "scope": "Shipped: PWA at feverhq.mitchleonard.com with iOS push, Anthropic chat, ICS calendar feed",
+  "live_url": "https://feverhq.mitchleonard.com",
+  "repo_url": "https://github.com/mitchleonard/fever-hq",
+  "wife_constraint": "no Claude tooling; one-time Add to Home Screen onboarding",
+  "annual_cost_estimate_usd": 3,
+  "original_idea": "iMessage bot — texts from a 'Fever HQ' identity 15 minutes before every tipoff, saved as a contact on her phone.",
+  "blockers": [
+    "iMessage: single 'Start new conversations from' identity per Apple ID — bot sends would have read as coming from Mitch personally, not from Fever HQ. Apple Business Chat would fix this but requires business registration.",
+    "SMS providers: Twilio ~$35-40 upfront (10DLC + minimum top-up), Plivo rejected the new custom-domain email at signup, Telnyx and Vonage gated similarly. Personal-project budget couldn't justify ~$20-40/yr for one recipient.",
+    "WhatsApp Sandbox / Facebook Messenger: Meta's 24-hour messaging window breaks pregame outbound to an inactive user without paid business verification."
+  ],
+  "final_architecture": "Custom PWA on mitchleonard.com. Next.js 15 + Tailwind v4 + shadcn-style components, Vercel free tier, Fever Navy/Gold/Red brand, web push notifications (iOS 16.4+), Anthropic Haiku 4.5 streaming chat, dynamic ICS calendar feed at /api/ics, season-aware channel detector.",
+  "display_timezone": "America/Chicago (Central). Schedule.json stored in Eastern (broadcaster convention), converted at the edge for display.",
+  "channel_display": "Broadcast network plus YouTube TV availability where carried (NBA TV, ESPN, ESPN2, ABC, CBS, NBC, ION, USA Network).",
+  "pivots_total": 5,
+  "pivot_chain": "iMessage -> Plivo (rejected domain) -> Twilio ($35-40 too steep) -> WhatsApp Sandbox / Messenger (24h rule) -> PWA on mitchleonard.com (shipped)"
 }

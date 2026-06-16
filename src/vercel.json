@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "name": "fever-hq",
+  "builds": [
+    { "src": "api/*.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/fever-2026.ics", "dest": "/api/ics" },
+    { "src": "/sms", "dest": "/api/sms" },
+    { "src": "/cron/pregame", "dest": "/api/pregame" },
+    { "src": "/", "dest": "/api/ics" }
+  ],
+  "crons": [
+    { "path": "/api/pregame", "schedule": "0 * * * *" }
+  ],
+  "env": {
+    "PYTHONPATH": "."
+  }
+}

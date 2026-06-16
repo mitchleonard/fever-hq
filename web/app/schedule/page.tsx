@@ -8,7 +8,7 @@ import {
   pastGames,
   dateLabelCt,
   tipoffTimeOnlyCt,
-  shortChannel,
+  channelWithYouTubeTV,
   vsOrAt,
   type Game,
 } from "@/lib/schedule";
@@ -32,7 +32,7 @@ function GameRow({ game, played }: { game: Game; played?: boolean }) {
         <p className="text-sm tabular text-paper">{tipoffTimeOnlyCt(game)}</p>
         <p className="text-[11px] text-paper/55 flex items-center justify-end gap-1 mt-0.5">
           <Television size={11} weight="duotone" className="text-fever-gold" />
-          {shortChannel(game.channel)}
+          {channelWithYouTubeTV(game.channel)}
         </p>
       </div>
     </div>

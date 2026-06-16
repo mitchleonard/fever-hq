@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Fever Bot — 2026 Indiana Fever Calendar Feed</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 540px;
+      margin: 8vh auto;
+      padding: 0 1.5rem;
+      line-height: 1.5;
+    }
+    h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+    p.sub { color: #666; margin-top: 0; }
+    code { background: rgba(127,127,127,0.15); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.92em; word-break: break-all; }
+    a.btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.55rem 0.9rem;
+      background: #ffb324;
+      color: #111;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    a.btn:hover { background: #ffa600; }
+    .small { font-size: 0.85rem; color: #888; }
+  </style>
+</head>
+<body>
+  <h1>Fever Bot — 2026 Indiana Fever Calendar Feed</h1>
+  <p class="sub">A subscribe-once calendar for one very devoted superfan.</p>
+  <p>Add this URL to Google Calendar &rarr; <strong>Other calendars &rarr; From URL</strong>:</p>
+  <p><code id="feed-url">/fever-2026.ics</code></p>
+  <p><a class="btn" href="/fever-2026.ics" download>Download .ics</a></p>
+  <hr />
+  <p class="small">Refreshes every 12 hours. Updated nightly at 4:20 AM ET if the official schedule shifts.</p>
+  <script>
+    document.getElementById('feed-url').textContent = window.location.origin + '/fever-2026.ics';
+  </script>
+</body>
+</html>

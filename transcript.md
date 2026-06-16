@@ -1,6 +1,6 @@
-# TRANSCRIPT — Hackathon #001 Fever Bot
+# TRANSCRIPT — Hackathon #003 Fever HQ
 
-Prompt-by-prompt narrative. Claude appends a block per user turn during build phase.
+Prompt-by-prompt narrative across the kickoff, multiple pivots, and final ship.
 
 ---
 
