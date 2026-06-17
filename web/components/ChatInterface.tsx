@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, type FormEvent } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { PaperPlaneTilt, ArrowsClockwise } from "@phosphor-icons/react";
 import { SuggestedPrompts } from "./SuggestedPrompts";
+import { MarkdownText } from "./MarkdownText";
 
 type Msg = {
   role: "user" | "assistant";
@@ -148,13 +149,15 @@ export function ChatInterface() {
                     : "max-w-[88%] rounded-2xl rounded-tl-md bg-white/8 text-paper px-4 py-2.5 text-[15px] leading-snug"
                 }
               >
-                {m.content || (m.role === "assistant" && streaming ? (
+                {m.content ? (
+                  <MarkdownText text={m.content} />
+                ) : m.role === "assistant" && streaming ? (
                   <span className="inline-flex gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-paper/60 animate-pulse" />
                     <span className="w-1.5 h-1.5 rounded-full bg-paper/60 animate-pulse [animation-delay:0.15s]" />
                     <span className="w-1.5 h-1.5 rounded-full bg-paper/60 animate-pulse [animation-delay:0.3s]" />
                   </span>
-                ) : null)}
+                ) : null}
               </div>
             </motion.div>
           ))}

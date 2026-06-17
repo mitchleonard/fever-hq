@@ -39,6 +39,9 @@ function GameRow({ game, played }: { game: Game; played?: boolean }) {
   );
 }
 
+// Reads "now" on every request — must not be statically prerendered.
+export const dynamic = "force-dynamic";
+
 export default function SchedulePage() {
   const upcoming = upcomingGames();
   const past = pastGames().slice(0, 5);

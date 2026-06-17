@@ -11,7 +11,7 @@
  * No new env vars required. ANTHROPIC_API_KEY covers web_search billing.
  */
 import Anthropic from "@anthropic-ai/sdk";
-import { schedule, upcomingGames, pastGames } from "./schedule";
+import { schedule, upcomingGames, pastGames, vsOrAt, type Game } from "./schedule";
 
 const MODEL = "claude-haiku-4-5-20251001";
 
@@ -187,6 +187,68 @@ export async function* streamReply(
     ) {
       yield event.delta.text;
     }
+  }
+}
+
+// ──────────────────────────────────────────────────────────────────────
+// Last-game recap — box score summary for the home screen.
+// ──────────────────────────────────────────────────────────────────────
+export type GameRecap = {
+  result: "W" | "L";
+  score: string;
+  summary: string;
+  top_scorers: { name: string; pts: number; reb?: number; ast?: number }[];
+};
+
+function isGameRecap(v: unknown): v is GameRecap {
+  if (!v || typeof v !== "object") return false;
+  const r = v as Record<string, unknown>;
+  return (
+    (r.result === "W" || r.result === "L") &&
+    typeof r.score === "string" &&
+    typeof r.summary === "string" &&
+    Array.isArray(r.top_scorers)
+  );
+}
+
+/** Looks up the final result of a past Fever game via web_search and
+ * returns a structured recap, or null if no confirmed score is found. */
+export async function getGameRecap(game: Game): Promise<GameRecap | null> {
+  const prompt = `Use web_search to find the confirmed final result of this Indiana Fever WNBA game, then respond with ONLY raw JSON — no markdown, no code fences, no commentary — matching exactly this shape:
+{"result":"W or L from the Fever's perspective","score":"Fever-Opponent e.g. 87-76","summary":"2-3 sentence recap, sports radio voice","top_scorers":[{"name":"player name","pts":number,"reb":number,"ast":number}]}
+
+Game: Fever ${vsOrAt(game)} ${game.opponent} on ${game.date}, at ${game.venue}.
+List up to 4 top scorers across both teams, Fever players first.
+If you cannot find a confirmed final score from a real source, respond with exactly: null`;
+
+  // Best-effort: a transient API or parsing failure should just mean the
+  // home screen omits the recap section, not break the page.
+  try {
+    const client = getClient();
+    const res = await client.messages.create({
+      model: MODEL,
+      max_tokens: 600,
+      messages: [{ role: "user", content: prompt }],
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      tools: [WEB_SEARCH_TOOL as any],
+    });
+
+    const text = res.content
+      .filter((b) => b.type === "text")
+      .map((b) => (b as { text: string }).text)
+      .join("")
+      .trim();
+
+    if (!text || text === "null") return null;
+
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) return null;
+
+    const parsed = JSON.parse(jsonMatch[0]);
+    return isGameRecap(parsed) ? parsed : null;
+  } catch (e) {
+    console.error("getGameRecap failed:", e);
+    return null;
   }
 }
 

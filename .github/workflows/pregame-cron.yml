@@ -1,0 +1,25 @@
+name: Fever HQ pregame push
+
+# Vercel Hobby only allows daily cron, but pregame pushes need to fire
+# within a 15-minute window before tipoff. This workflow is the external
+# scheduler that DEPLOY-PWA.md calls for — without it, /api/cron/pregame
+# is never invoked and no push notification is ever sent, regardless of
+# whether a subscription is configured.
+#
+# Required repo secrets (Settings -> Secrets and variables -> Actions):
+#   FEVER_HQ_URL  - the deployed app's base URL, e.g. https://feverhq.mitchleonard.com
+#   CRON_SECRET   - must match the CRON_SECRET set in Vercel
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping-pregame-cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hit /api/cron/pregame
+        run: |
+          curl -fsS -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            "${{ secrets.FEVER_HQ_URL }}/api/cron/pregame"
