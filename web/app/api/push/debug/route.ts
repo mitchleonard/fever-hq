@@ -1,9 +1,11 @@
 /**
  * Diagnostic endpoint for the push pipeline. Reuses CRON_SECRET for auth
- * so no new credential is needed. Reports whether the subscription and
- * VAPID keys are actually configured server-side, without leaking the
- * full subscription (just the push service host).
+ * so no new credential is needed. Reports which subscribers and VAPID
+ * keys are actually configured server-side, without leaking the full
+ * subscription (just the push service host per subscriber).
  */
+import { getPushSubscribers } from "@/lib/pushSubscribers";
+
 export const runtime = "nodejs";
 
 export async function GET(req: Request) {
@@ -13,25 +15,14 @@ export async function GET(req: Request) {
     return new Response("Unauthorized", { status: 401 });
   }
 
-  const subEnv = process.env.WIFE_PUSH_SUBSCRIPTION_JSON;
-  let subscriptionValid = false;
-  let subscriptionEndpointHost: string | null = null;
-  if (subEnv) {
-    try {
-      const sub = JSON.parse(subEnv);
-      if (typeof sub?.endpoint === "string") {
-        subscriptionValid = true;
-        subscriptionEndpointHost = new URL(sub.endpoint).host;
-      }
-    } catch {
-      subscriptionValid = false;
-    }
-  }
+  const subscribers = getPushSubscribers().map(({ label, subscription }) => ({
+    label,
+    endpoint_host: new URL(subscription.endpoint).host,
+  }));
 
   return Response.json({
-    subscription_configured: Boolean(subEnv),
-    subscription_valid: subscriptionValid,
-    subscription_endpoint_host: subscriptionEndpointHost,
+    subscribers,
+    subscriber_count: subscribers.length,
     vapid_public_configured: Boolean(process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY),
     vapid_private_configured: Boolean(process.env.VAPID_PRIVATE_KEY),
   });

@@ -98,6 +98,16 @@ WIFE_PUSH_SUBSCRIPTION_JSON=<paste the full JSON, single line>
 
 Redeploy.
 
+## Step 6b — Set up your own test subscription (~1 min, optional)
+
+To receive pushes on your own phone for testing, repeat Step 5/6 on your
+own device (Schedule → "Turn on game-day alerts" → Allow), then add a
+second env var instead of overwriting the wife's:
+```
+TESTER_PUSH_SUBSCRIPTION_JSON=<paste your full JSON, single line>
+```
+Redeploy. The cron and the on-demand test push (Step 7b) now fire to both.
+
 ## Step 7 — Manual test the cron (~30 sec)
 
 ```bash
@@ -125,6 +135,18 @@ Vercel project to Pro, add this cron back to `vercel.json`:
   ]
 }
 ```
+
+This repo ships `.github/workflows/pregame-cron.yml` as that external scheduler — set the `CRON_SECRET` and `FEVER_HQ_URL` repo secrets and it pings `/api/cron/pregame` every 15 min for free.
+
+## Step 7b — Fire a test push on demand (~10 sec)
+
+Real pregame pushes only fire inside a 15-minute window before an actual tipoff, which is awkward to wait around for. To verify the whole pipeline (VAPID, subscription, service worker, notification display) right now:
+
+```bash
+curl -H "Authorization: Bearer YOUR_CRON_SECRET" https://YOUR_VERCEL_URL/api/push/test
+```
+
+This sends an immediate "🏀 Fever HQ test push" notification to every configured subscriber (`WIFE_PUSH_SUBSCRIPTION_JSON` and `TESTER_PUSH_SUBSCRIPTION_JSON`) and returns a per-recipient `sent` / `send-error` status.
 
 ## Step 8 — Calendar piece (~30 sec)
 
