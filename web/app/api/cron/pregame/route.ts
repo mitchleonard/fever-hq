@@ -18,6 +18,7 @@ import {
   type Game,
 } from "@/lib/schedule";
 import { isInSeason } from "@/lib/season";
+import { getPushSubscribers } from "@/lib/pushSubscribers";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -67,14 +68,13 @@ export async function GET(req: Request) {
   }
 
   // Push send
-  const subEnv = process.env.WIFE_PUSH_SUBSCRIPTION_JSON;
-  if (!subEnv) {
+  const subscribers = getPushSubscribers();
+  if (subscribers.length === 0) {
     return Response.json({
       status: "no-subscription",
-      note: "WIFE_PUSH_SUBSCRIPTION_JSON env var not set.",
+      note: "No subscriber env vars set (WIFE_PUSH_SUBSCRIPTION_JSON / TESTER_PUSH_SUBSCRIPTION_JSON).",
     });
   }
-  const sub = JSON.parse(subEnv);
 
   const vapidPublic = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
   const vapidPrivate = process.env.VAPID_PRIVATE_KEY;
@@ -97,18 +97,26 @@ export async function GET(req: Request) {
     data: { url: "/" },
   });
 
-  try {
-    await webpush.sendNotification(sub, payload);
-    return Response.json({
-      status: "sent",
-      game: `${candidate.date} ${candidate.opponent}`,
-      title,
-      body,
-    });
-  } catch (e) {
-    return Response.json({
-      status: "send-error",
-      error: e instanceof Error ? e.message : String(e),
-    });
-  }
+  const recipients = await Promise.all(
+    subscribers.map(async ({ label, subscription }) => {
+      try {
+        await webpush.sendNotification(subscription, payload);
+        return { label, status: "sent" };
+      } catch (e) {
+        return {
+          label,
+          status: "send-error",
+          error: e instanceof Error ? e.message : String(e),
+        };
+      }
+    }),
+  );
+
+  return Response.json({
+    status: "sent",
+    game: `${candidate.date} ${candidate.opponent}`,
+    title,
+    body,
+    recipients,
+  });
 }
