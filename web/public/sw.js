@@ -8,12 +8,17 @@
  *      a hard error if the user has no network).
  */
 
-const SHELL = "feverhq-shell-v1";
-const SHELL_FILES = ["/", "/schedule", "/manifest.json"];
+// Bump version whenever sw.js changes — triggers activate → old cache cleanup.
+const SHELL = "feverhq-shell-v2";
+// Only pre-cache truly static assets at install. SSR pages ("/", "/schedule")
+// are NOT pre-cached here because they're time-sensitive and a stale
+// install-time snapshot would serve outdated content as the offline fallback.
+// Instead, pages are cached on first successful visit (see fetch handler).
+const STATIC_ASSETS = ["/manifest.json", "/icon-192.png", "/icon-512.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(SHELL).then((cache) => cache.addAll(SHELL_FILES)).catch(() => {})
+    caches.open(SHELL).then((cache) => cache.addAll(STATIC_ASSETS)).catch(() => {})
   );
   self.skipWaiting();
 });
@@ -33,10 +38,20 @@ self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") return;
   const url = new URL(request.url);
-  // Network-first for API, cache-first for everything else
+  // Never intercept API calls.
   if (url.pathname.startsWith("/api/")) return;
+  // Network-first: always try to fetch fresh content.
+  // On success, update the cache so the offline fallback stays current.
+  // On failure, serve the last cached version (or the cached root as last resort).
   event.respondWith(
-    fetch(request).catch(() => caches.match(request).then((r) => r || caches.match("/")))
+    fetch(request)
+      .then((response) => {
+        if (response.ok) {
+          caches.open(SHELL).then((cache) => cache.put(request, response.clone()));
+        }
+        return response;
+      })
+      .catch(() => caches.match(request).then((r) => r || caches.match("/")))
   );
 });
 
