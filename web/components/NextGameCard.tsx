@@ -35,10 +35,7 @@ export function NextGameCard({ game }: { game: Game }) {
 
   return (
     <motion.section
-      initial={reduce ? false : { opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="relative overflow-hidden rounded-[16px] bg-fever-navy-soft/70 border border-white/8 p-5"
+      className={`relative overflow-hidden rounded-[16px] bg-fever-navy-soft/70 border border-white/8 p-5${reduce ? "" : " card-reveal"}`}
     >
       {/* Top metadata strip */}
       <div className="flex items-center justify-between mb-3">

@@ -83,6 +83,17 @@
     );
     height: 2px;
   }
+
+  /* CSS-only card reveal — no JS required, so the card is never invisible
+     on first render while motion/react is still hydrating. */
+  .card-reveal {
+    animation: card-reveal 0.5s var(--ease-out-expo) both;
+  }
+}
+
+@keyframes card-reveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
